@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="personalApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Webpage</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div ng-controller="MainController as mainCtrl">
+        <!-- Header and Navigation -->
+        <header>
+            <h1>Welcome to My Personal Webpage</h1>
+            <nav>
+                <ul>
+                    <li><a href="" ng-click="mainCtrl.setPage('about')">About Me</a></li>
+                    <li><a href="" ng-click="mainCtrl.setPage('hobbies')">Hobbies</a></li>
+                    <li><a href="" ng-click="mainCtrl.setPage('family')">Family</a></li>
+                    <li><a href="" ng-click="mainCtrl.setPage('education')">Education</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main>
+            <div ng-include="mainCtrl.getPage()"></div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
